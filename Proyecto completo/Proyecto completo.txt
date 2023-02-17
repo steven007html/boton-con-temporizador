@@ -1,0 +1,107 @@
+
+<html>
+<head>
+  <!-- Button html -->
+	<title>Boton descarga con temporizador</title>
+	<link href="estilos.css" rel="stylesheet" type="text/css"></link>
+	<!--Icon-Font-->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/eb496ab1a0.js"></script>
+</head>
+<body>
+  <center>
+  <div class="content-descarga">
+    <a class="descarga-ahora" href="example.com" id="download" target="_blank">
+      Download now <i class="fa fa-download"></i>
+    </a>
+    <button class="btn-descarga" id="btn">
+      Download <i class="fa fa-arrow-right"></i>
+    </button>
+  </div>
+  </center>
+  
+<script src="btn-time.js"></script>
+</body>
+</html>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.content-descarga{
+    width: 100%;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background: #f1f6ff;
+    text-align: center;
+    border: 2px solid #adcaff;
+}
+.descarga-ahora{
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 20px;
+    background: #286ef2;
+    color: #fff;
+    border-radius: 5px;
+}
+.descarga-ahora:hover{
+    opacity: 0.9;
+}
+.btn-descarga{
+    display: inline-block;
+    padding: 15px 25px;
+    background: #286ef2;
+    color: #fff;
+    border:none;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    outline: 0px;
+    cursor: pointer;
+}
+.btn-descarga:hover{
+    opacity: 0.9;
+}
+.content-descarga i{
+    margin-left: 5px;
+}
+</style> 
+<script>
+  var boton = document.getElementById("download");
+var contador = 15;<!-- Tiempo (time)  -->
+var etiqueta = document.createElement("p");
+
+etiqueta.innerHTML = "<b> Wait 15 seconds.</b>";
+var id;
+
+boton.parentNode.replaceChild(etiqueta, boton);
+
+function descarga(){
+   this.style.display = "none";
+   id = window.setInterval(function(){
+      contador--;
+      if(contador < 0){
+         etiqueta.parentNode.replaceChild(boton, etiqueta);
+         window.clearInterval(id);
+      }
+      else{
+         etiqueta.innerHTML = + contador.toString() + "<b> Seconds to download. </b>";
+      }
+   }, 1000)
+}
+
+var clickbtn = document.getElementById("btn");
+clickbtn.onclick = descarga;
+  </script>
+
+<!--Anuncios Eliminar si se desea-->
+<center>
+  <script async="async" data-cfasync="false" src="//acrossheadquartersanchovy.com/e446bfe50bb4b7f7ec603dd49796a2a9/invoke.js"></script>
+<div id="container-e446bfe50bb4b7f7ec603dd49796a2a9"></div>
+</center>
+
+
+<script src="//acrossheadquartersanchovy.com/50/a6/33/50a6337d8a6bfe793eb09808016051ff.js" type="text/javascript"></script>
+<script src="//acrossheadquartersanchovy.com/27/2e/7b/272e7bc28671cef3773a27bd4db561fc.js" type="text/javascript"></script>
